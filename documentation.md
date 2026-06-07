@@ -371,9 +371,12 @@ python-dotenv==1.1.0
 
 ## 5. Optional Bonus Evidence
 
-- [x] **Third selected block implemented with strong quality** – NLP (GPT-4.1-mini) is used for both structured extraction and natural-language explanation, with separate prompt designs for text-only and CV-enhanced paths. JSON mode and key validation ensure robust output parsing.
-- [x] **Extended evaluation** – CV block includes top-5 accuracy, full confusion matrix analysis, top-15 confused class pairs, and visualised failure cases with root-cause discussion
+- [x] Third selected block implemented with strong quality
+- [ ] More than two data sources used with clear added value
+- [ ] A core section is done exceptionally well
+- [x] Extended evaluation
 - [x] Ethics, bias, or fairness analysis
+- [ ] Creative or exceptional use case
 
 ---
 
