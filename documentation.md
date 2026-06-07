@@ -44,7 +44,7 @@ The third block (NLP) is implemented as an integral part of the combined pipelin
 
 The three blocks form a sequential pipeline (see [`app.py`](app.py)):
 
-![Diagramm Integration Logic](https://github.com/eberhlor/Abgabe-Car-price-prediction/bilder-doku/Ablauf.png)
+![Diagramm Integration Logic](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Ablauf.png)
 
 The CV block provides the most reliable make identification (visual signal), while NLP handles all other attributes that cannot be inferred from an image alone. The ML model is the price computation engine that consumes both sources.
 
@@ -298,9 +298,9 @@ Validation and test images receive only resize + normalisation (no augmentation)
   3. User clicks "Marke erkennen & Preis schätzen"
   4. App displays: extracted vehicle data (JSON), CV recognition result (JSON with ViT + CLIP top-5), detected make, estimated price in CHF, and a German natural-language explanation
 
-![Application-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/bilder-doku/Example-Prompt1.png)
+![Application-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Example-Prompt1.png)
 
-![Prompt-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/bilder-doku/Example-Prompt2.png)
+![Prompt-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Example-Prompt2.png)
 
 The app is built with **Gradio Blocks** (single-tab layout, see [`app.py`](app.py)) and can also be run locally (see Section 4).
 
@@ -419,7 +419,7 @@ In the lecture, the concepts of *misuse*, *unintended harm*, and *dual use* of A
 
 **Finding:** The model returned only vehicle labels with very low confidence scores (max. 0.08) and was clearly uncertain (ViT and CLIP in disagreement). The OpenAI arbitration step correctly identified that no vehicle was present in the image and explicitly flagged the lack of relevant subject matter. The system is not suitable for person recognition and produces no useful or dangerous output in such a misuse scenario.
 
-![Prompt-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/bilder-doku/Ethic-Beweis-Bild.png)
+![Prompt-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Ethic-Beweis-Bild.png)
 ---
 
 #### Overall Assessment
