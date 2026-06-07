@@ -60,7 +60,7 @@ The CV block provides the most reliable make identification (visual signal), whi
 |---|---|---|---|---|
 | 1 | `car-data.csv` (Indian used-car marketplace dataset) | CSV (tabular) | ~2000+ rows before cleaning (exact count printed at runtime) | Primary training data for price prediction |
 
-> See *Data cleaning* in [`Prediction-Model-Car.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-ML/Prediction-Model-Car.ipynby#data-cleaning)
+> See *Data cleaning* in [`Prediction-Model-Car.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-ML/Prediction-Model-Car.ipynby)
 
 **Raw columns used:** `Price` (target, INR), `Year`, `Kilometer`, `Engine` (text → cc), `Max Power` (text → bhp), `Transmission`, `Owner`, `Fuel Type`, `Make`, `Seating Capacity`, `Fuel Tank Capacity`
 
