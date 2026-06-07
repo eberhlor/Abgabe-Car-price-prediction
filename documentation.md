@@ -66,7 +66,7 @@ The CV block provides the most reliable make identification (visual signal), whi
 
 #### 2A.2 Preprocessing and Features
 
-**Cleaning steps** ([`Prediction-Model-Car.ipynb`, cell 7](Prediction-Model-Car.ipynb#L7)):
+**Cleaning steps** ([`Prediction-Model-Car.ipynb`, cell 8](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-ML/Prediction-Model-Car.ipynb#L7)):
 - Drop rows with missing values (`dropna()`)
 - Remove duplicate rows
 - Remove price outliers: keep only `50 000 ≤ Price ≤ 10 000 000` (INR)
@@ -116,7 +116,7 @@ Two additional features (`Seating Capacity`, `Fuel Tank Capacity`) were tested i
 | 3 | Hyperparameter tuning on top-10 features | `GridSearchCV` over `max_depth` ∈ {5, 10, 25} and `n_estimators` ∈ {100, 500, 1000}; best: `max_depth=25`, `n_estimators=1000` | RandomForest (tuned), LinearRegression | RF: -501660.4; LR: -853065.6 | No improvement over Iterations 1 & 2 |
 | 4 | Reduce prediction noise via tighter outlier clipping and broader luxury proxy | (1) Price outlier clipping changed from fixed bounds to 1st–99th percentile; (2) `is_luxury` extended from 4 to 8 brands (added Jaguar, Land Rover, Volvo, Lexus) | RandomForest (`max_depth=25`, `n_estimators=1000`) | RF: -405038.2; LR: -726240.8 | Best CV RMSE; final model saved as `car_model.pkl` |
 
-> See [`Prediction-Model-Car.ipynb`](Prediction-Model-Car.ipynb) – sections *Iteration 1*, *Iteration 2*, *Iteration 3*, *Iteration 4*
+> See [`Prediction-Model-Car.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-ML/Prediction-Model-Car.ipynb) – sections *Iteration 1*, *Iteration 2*, *Iteration 3*, *Iteration 4*
 
 
 #### 2A.5 Evaluation and Error Analysis
@@ -145,7 +145,7 @@ Final RMSE value from Iteration 4 `model_performance()` output: -405038.2
 - **Inputs received from other blocks:** `make` (string) from the CV block (brand extracted from ViT/CLIP label via `extract_make_from_label()`); all remaining features from the NLP block (`year`, `kilometer`, `engine_cc`, `max_power_bhp`, `transmission`, `owner`, `fuel_type`)
 - **Outputs provided to other blocks:** `prediction` (float, CHF price) passed to the NLP block for explanation generation
 
-See [`app.py`, `predict_price()` function](app.py) and the combined pipeline `run_combined_pipeline()`.
+See [`app.py`, `predict_price()` function](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Abgabe/app.py) and the combined pipeline `run_combined_pipeline()`.
 
 ---
 
@@ -162,7 +162,7 @@ See [`app.py`, `predict_price()` function](app.py) and the combined pipeline `ru
 
 **Text preprocessing:** None applied beyond stripping whitespace. The LLM handles tokenisation and interpretation internally.
 
-**Prompt design** (see [`app.py`, `extract_preferences()`](app.py)):
+**Prompt design** (see [`app.py`, `extract_preferences()`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Abgabe/app.py)):
 
 Two separate system prompts are used:
 
@@ -219,7 +219,7 @@ All prompts use `response_format={"type": "json_object"}` (JSON mode) to guarant
 | 2 | `google/vit-base-patch16-224` (Hugging Face Hub) | Pre-trained ViT weights | 86M parameters | Transfer learning backbone |
 | 3 | `openai/clip-vit-large-patch14` (Hugging Face Hub) | Pre-trained CLIP weights | ~307M parameters | Zero-shot ensemble partner |
 
-> See *Load the Stanford Cars Dataset* in [`transfer_car_make_model_prediction-trained.ipynb`](transfer_car_make_model_prediction-trained.ipynb)
+> See *Load the Stanford Cars Dataset* in [`transfer_car_make_model_prediction-trained.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-Computer-Vision/transfer_car_make_model_prediction-trained.ipynb)
 
 Dataset splits used:
 - Train: 6 515 images (80% of original train split)
@@ -242,7 +242,7 @@ Dataset splits used:
 
 Validation and test images receive only resize + normalisation (no augmentation) to ensure unbiased evaluation.
 
-> See *Preprocessing & Data Augmentation* in [`transfer_car_make_model_prediction-trained.ipynb`](transfer_car_make_model_prediction-trained.ipynb)
+> See *Preprocessing & Data Augmentation* in [`transfer_car_make_model_prediction-trained.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-Computer-Vision/transfer_car_make_model_prediction-trained.ipynb)
 
 #### 2C.3 Model Selection
 
@@ -260,7 +260,7 @@ Validation and test images receive only resize + normalisation (no augmentation)
 | 2 | Ensemble with CLIP | Add CLIP zero-shot as second classifier; combine scores by summing per-label scores | ViT + CLIP | Qualitative: reduces single-model outlier errors | Reduced disagreement errors |
 | 3 | Disagreement resolution | If ViT and CLIP disagree on top-1 label, call OpenAI Vision (GPT-4.1-mini) to arbitrate and explain | ViT + CLIP + GPT-4.1-mini vision | Qualitative | More transparent failure handling |
 
-> See [`transfer_car_make_model_prediction-trained.ipynb`](transfer_car_make_model_prediction-trained.ipynb) (training) and [`app.py`, `classify_with_vit()`, `classify_with_clip()`, `get_cv_consensus()`](app.py)
+> See [`transfer_car_make_model_prediction-trained.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-Computer-Vision/transfer_car_make_model_prediction-trained.ipynb) (training) and [`app.py`, `classify_with_vit()`, `classify_with_clip()`, `get_cv_consensus()`](app.py)
 
 #### 2C.5 Evaluation and Error Analysis
 
@@ -278,7 +278,7 @@ Validation and test images receive only resize + normalisation (no augmentation)
   - **Background clutter:** Vehicles in crowded parking lots or car shows occasionally mislead the model
   - Top-1 accuracy is modest (28.3%), but Top-5 accuracy (59.7%) is meaningful for the use case, since the app needs only the correct make (not the full model+year label) to compute a price
 
-> See *Failure analysis & model limitations* in [`transfer_car_make_model_prediction-trained.ipynb`](transfer_car_make_model_prediction-trained.ipynb)
+> See *Failure analysis & model limitations* in [`transfer_car_make_model_prediction-trained.ipynb`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Car-Computer-Vision/transfer_car_make_model_prediction-trained.ipynb)
 
 #### 2C.6 Integration with Other Block(s)
 
@@ -302,7 +302,7 @@ Validation and test images receive only resize + normalisation (no augmentation)
 
 ![Prompt-Overview](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Example-Prompt2.png)
 
-The app is built with **Gradio Blocks** (single-tab layout, see [`app.py`](app.py)) and can also be run locally (see Section 4).
+The app is built with **Gradio Blocks** (single-tab layout, see [`app.py`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Abgabe/app.py)) and can also be run locally (see Section 4).
 
 ---
 
