@@ -46,7 +46,7 @@ The three blocks form a sequential pipeline (see [`app.py`](https://github.com/e
 
 ![Diagramm Integration Logic](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Ablauf.png)
 
-The CV block provides the most reliable make identification (visual signal), while NLP handles all other attributes that cannot be inferred from an image alone. The ML model is the price computation engine that consumes both sources.
+The CV block provides the most reliable car manufacturer (make) identification (visual signal), while NLP handles all other attributes that cannot be inferred from an image alone. The ML model is the price computation engine that consumes both sources.
 
 ---
 
