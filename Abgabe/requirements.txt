@@ -1,0 +1,8 @@
+gradio
+numpy
+openai
+scikit-learn
+torch
+transformers
+Pillow
+python-dotenv
