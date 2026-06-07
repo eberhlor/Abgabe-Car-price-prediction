@@ -450,4 +450,4 @@ The ML model was trained exclusively on Indian used-car market data. While this 
 **Evidence for third block (NLP):**
 The NLP block fulfils two distinct roles in the pipeline: (1) structured entity extraction from unstructured German text using a carefully engineered system prompt with explicit field definitions, enum constraints, and defaults; (2) contextual price explanation that incorporates both vehicle attributes and the CV model's identified label to produce a model-specific, factually grounded explanation. The separation of the two prompt functions (`extract_preferences` vs. `generate_explanation_cv`) and the use of JSON mode with programmatic validation (`_parse_json`) demonstrate a production-grade NLP integration.
 
-See [`app.py`, functions `extract_preferences()`, `generate_explanation_text()`, `generate_explanation_cv()`](app.py)
+See [`app.py`, functions `extract_preferences()`, `generate_explanation_text()`, `generate_explanation_cv()`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Abgabe/app.py)
