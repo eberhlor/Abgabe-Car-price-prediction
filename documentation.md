@@ -357,7 +357,15 @@ python app.py
 - CV model is hosted on Hugging Face Hub at `eberhlor/car-prediction-model-vit`; the `VIT_MODEL_DIR` env variable can point to a local directory if the Hub is unavailable
 - CLIP model (`openai/clip-vit-large-patch14`) is loaded directly from the Hub at inference time with no fine-tuning
 - The CHF conversion rate (`INR_TO_CHF = 0.0083`) is hardcoded; update in `app.py` if needed
-- Python package versions: *(TODO: add `requirements.txt` or `pip freeze` output)*
+- Python package versions: 
+gradio==5.49.1
+numpy==2.4.2
+openai==2.30.0
+scikit-learn==1.8.0
+torch==2.11.0
+transformers==5.5.0
+Pillow==11.1.0
+python-dotenv==1.1.0
 
 ---
 
