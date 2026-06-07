@@ -42,7 +42,7 @@ The third block (NLP) is implemented as an integral part of the combined pipelin
 
 ### 1.2 Integration Logic
 
-The three blocks form a sequential pipeline (see [`app.py`](app.py)):
+The three blocks form a sequential pipeline (see [`app.py`](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/Abgabe/app.py)):
 
 ![Diagramm Integration Logic](https://github.com/eberhlor/Abgabe-Car-price-prediction/blob/main/bilder-doku/Ablauf.png)
 
